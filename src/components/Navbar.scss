@@ -1,0 +1,145 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0b3d91, #041d40);
+  padding: 1rem 2rem;
+  color: #00f6ff;
+  position: relative;
+  box-shadow: 0 0 15px #00f6ff88;
+  z-index: 1000;
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-shadow: 0 0 8px #00f6ff;
+    letter-spacing: 2px;
+    cursor: default;
+    user-select: none;
+    transition: text-shadow 0.3s ease;
+
+    &:hover {
+      text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff,
+        0 0 40px #00ffff;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+
+    .bar {
+      width: 28px;
+      height: 3px;
+      background-color: #00f6ff;
+      border-radius: 2px;
+      transition: all 0.4s ease;
+      transform-origin: center;
+
+      &.open:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &.open:nth-child(2) {
+        opacity: 0;
+      }
+      &.open:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+
+    &:hover .bar {
+      filter: drop-shadow(0 0 6px #00f6ff);
+      animation: wave 1s infinite alternate ease-in-out;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      position: relative;
+      color: #00f6ff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 4px 0;
+      transition: color 0.3s ease;
+
+      &.active,
+      &:hover {
+        color: #00ffff;
+
+        &::after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: #00ffff;
+        border-radius: 4px;
+        opacity: 0;
+        transition: width 0.3s ease, opacity 0.3s ease;
+      }
+    }
+  }
+
+  // Responsivo para telemóvel
+  @media (max-width: 640px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: #041d40;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-radius: 0 0 8px 8px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+
+      &.open {
+        max-height: 200px;
+      }
+
+      a {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+// Animação para o botão hamburger
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 6px #00f6ff);
+  }
+  100% {
+    transform: translateY(-4px);
+    filter: drop-shadow(0 0 12px #00f6ff);
+  }
+}
