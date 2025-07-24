@@ -1,12 +1,22 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Navbar.scss';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="logo">VizelDrone</div>
 
       <button
@@ -20,14 +30,26 @@ export default function Navbar() {
       </button>
 
       <div className={`menu ${menuOpen ? 'open' : ''}`}>
-        <NavLink to="/" onClick={() => setMenuOpen(false)} className={({ isActive }) => (isActive ? 'active' : '')}>
+        <NavLink
+          to="/"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           Home
         </NavLink>
-        <NavLink to="/about" onClick={() => setMenuOpen(false)} className={({ isActive }) => (isActive ? 'active' : '')}>
+        <NavLink
+          to="/about"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           Sobre
         </NavLink>
-        <NavLink to="/gallery" onClick={() => setMenuOpen(false)} className={({ isActive }) => (isActive ? 'active' : '')}>
-          Galeria
+        <NavLink
+          to="/drones"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
+          Drones
         </NavLink>
       </div>
     </nav>

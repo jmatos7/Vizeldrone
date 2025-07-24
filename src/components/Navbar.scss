@@ -1,31 +1,80 @@
 .navbar {
   display: flex;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #0b3d91, #041d40);
+
+  top: 0;
   padding: 1rem 2rem;
-  color: #00f6ff;
-  position: relative;
+  color: #41d1d6;
+
   box-shadow: 0 0 15px #00f6ff88;
   z-index: 1000;
+  transition: background 1s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  &.scrolled {
+    background: transparent;
+    box-shadow: 0 0 15px transparent;
+  }
 
   .logo {
     font-size: 1.8rem;
     font-weight: 900;
-    text-shadow: 0 0 8px #00f6ff;
     letter-spacing: 2px;
     cursor: default;
     user-select: none;
     transition: text-shadow 0.3s ease;
+    color: #00f6ff;
+    text-shadow: 0 0 8px #00f6ff;
+
+    /* Animação de "brilho pulsante" */
+    animation: float 2s ease-in-out infinite;
 
     &:hover {
-      text-shadow:
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 30px #00ffff,
-        0 0 40px #00ffff;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        text-shadow:
+          0 0 8px #00f7ff7c,
+          0 0 20px #00f7ff7c,
+          0 0 30px #00f7ff7c,
+          0 0 40px #00f7ff7c;
+      }
+
+      50% {
+
+        text-shadow:
+          0 0 5px #00f7ff7c,
+          0 0 10px #00f7ff7c,
+          0 0 15px #00f7ff7c,
+          0 0 20px #00f7ff7c;
+      }
+    }
+
+    /* Animação de "flutuar" (subir e descer levemente) */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+
+    }
+
+    .logo:hover {
+      animation: glow 2s ease-in-out infinite;
     }
   }
+
 
   .hamburger {
     display: none;
@@ -48,9 +97,11 @@
       &.open:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
       }
+
       &.open:nth-child(2) {
         opacity: 0;
       }
+
       &.open:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
       }
@@ -74,6 +125,10 @@
       font-size: 1.1rem;
       padding: 4px 0;
       transition: color 0.3s ease;
+
+      &.active{
+        color: #00ffff;
+      }
 
       &.active,
       &:hover {
@@ -108,21 +163,27 @@
 
     .menu {
       position: absolute;
-      top: 60px;
+      top: 50px;
       left: 0;
       right: 0;
-      background: #041d40;
+      background: linear-gradient(90deg, #0b3d91, #041d40);
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-      padding: 1rem 0;
+      padding: 0;
       border-radius: 0 0 8px 8px;
       max-height: 0;
+      opacity: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease;
+      transition: max-height 1s ease-in-out;
 
       &.open {
-        max-height: 200px;
+        max-height: 500px;
+        padding: 1rem 0;
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: 0 6px 10px 0 #00f6ff88;
+
       }
 
       a {
@@ -138,6 +199,7 @@
     transform: translateY(0);
     filter: drop-shadow(0 0 6px #00f6ff);
   }
+
   100% {
     transform: translateY(-4px);
     filter: drop-shadow(0 0 12px #00f6ff);
