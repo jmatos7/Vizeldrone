@@ -2,6 +2,8 @@
   text-align: center;
   padding: 4rem 2rem;
   color: #00f6ff;
+  max-width: 1200px; // ⬅️ aumenta o conteúdo principal
+  margin: 0 auto;
 
   .title {
     font-size: 3rem;
@@ -35,7 +37,7 @@
 
     .video-wrapper {
       width: 100%;
-      max-width: 720px;
+      max-width: 960px; // ⬅️ aumentei para ocupar mais largura
       aspect-ratio: 16 / 9;
 
       iframe {
@@ -47,8 +49,8 @@
     }
 
     .description {
-      font-size: 1.25rem;
-      max-width: 700px;
+      font-size: 1.3rem;
+      max-width: 900px; // ⬅️ mais espaço para texto
 
       a {
         color: #00f6ff;
@@ -92,7 +94,6 @@
     }
 
     ul {
-      
       list-style: none;
       padding: 0;
 
@@ -118,5 +119,39 @@
   .drone-wrapper {
     margin-top: 4rem;
   }
-}
 
+  // ✅ Responsivo para tablets e telemóveis
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.2rem;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+
+    .why-section h2 {
+      font-size: 1.6rem;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .video-wrapper {
+      max-width: 100%;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .subscribe-button {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+}

@@ -51,6 +51,13 @@ export default function Navbar() {
         >
           Drones
         </NavLink>
+        <NavLink
+          to="/contact"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
+          Contact
+        </NavLink>
       </div>
     </nav>
   );

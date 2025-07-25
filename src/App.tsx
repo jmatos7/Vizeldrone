@@ -6,6 +6,7 @@ import About from './pages/About';
 import DRONES from './pages/Drones';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Contact from './pages/Contact';
 import PageTransition from './pages/PageTransition';
 import './main.scss';
 
@@ -41,6 +42,14 @@ export default function App() {
               element={
                 <PageTransition>
                   <DRONES />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <PageTransition>
+                  <Contact />
                 </PageTransition>
               }
             />

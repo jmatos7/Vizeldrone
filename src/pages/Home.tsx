@@ -59,6 +59,10 @@ export default function Home() {
       <section className='drones-usados'>
         <Drones />
       </section>
+
+      <section className='About'>
+        <Sobre />
+      </section>
     </>
   );
 }
