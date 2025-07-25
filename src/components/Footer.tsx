@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-content">
         <div className="brand">
           <div className='logo'>
-            <img src="./src/img/LOGO.jpg" alt="drones" />
+            <img src="/img/LOGO.jpg" alt="drones" />
             <h2>VizelDrone</h2>
           </div>
           <p>Explora o céu com precisão e tecnologia.</p>
