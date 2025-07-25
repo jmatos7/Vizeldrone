@@ -1,6 +1,7 @@
 import './Home.scss';
 import Sobre from './About';
 import Drones from './Drones';
+import Contact from './Contact';
 
 export default function Home() {
   return (
@@ -62,6 +63,10 @@ export default function Home() {
 
       <section className='About'>
         <Sobre />
+      </section>
+
+      <section className='Contact'>
+        <Contact />
       </section>
     </>
   );
