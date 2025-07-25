@@ -69,11 +69,11 @@ export default function Contact() {
                 </a>
 
                 <div className="social-item">
-                    <MdEmail />: vizeldrone@gmail.com
+                    <MdEmail /> vizeldrone@gmail.com
                 </div>
 
                 <div className="social-item">
-                    <IoLocationOutline />: Vizela
+                    <IoLocationOutline /> Vizela
                 </div>
             </div>
 

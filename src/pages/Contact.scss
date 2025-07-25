@@ -9,13 +9,14 @@
   text-align: left;
   max-width: 700px; // Define limite e centraliza
 
-   h1{
+  h1 {
     font-size: 3rem;
     margin-bottom: 2rem;
     align-self: center; // garante alinhamento à esquerda
   }
 
-  a, .social-item {
+  a,
+  .social-item {
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -117,4 +118,10 @@
 
 .swal2-icon {
   color: #00f6ff !important;
+}
+
+@media (max-width: 768px) {
+  .socials{
+    margin-left: 35px;
+  }
 }
