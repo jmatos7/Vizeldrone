@@ -19,6 +19,8 @@
   }
 
   .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 2px;
@@ -28,7 +30,6 @@
     color: #00f6ff;
     text-shadow: 0 0 8px #00f6ff;
 
-    /* Animação de "brilho pulsante" */
     animation: float 2s ease-in-out infinite;
 
     &:hover {
@@ -72,6 +73,13 @@
 
     .logo:hover {
       animation: glow 2s ease-in-out infinite;
+    }
+
+    img {
+      height: 40px;
+      margin-right: 5px;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #00f6ff80;
     }
   }
 
@@ -126,7 +134,7 @@
       padding: 4px 0;
       transition: color 0.3s ease;
 
-      &.active{
+      &.active {
         color: #00ffff;
       }
 

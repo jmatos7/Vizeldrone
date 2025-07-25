@@ -1,0 +1,99 @@
+.about-us {
+  padding: 6rem 3rem;
+  color: #e0f7fa;
+  text-align: center;
+
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    color: #00f6ff;
+    text-shadow: 0 0 12px #00f6ff88;
+  }
+
+  p {
+    font-size: 1.3rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.8;
+    color: #c1ecf3;
+  }
+
+  strong {
+    color: #00f6ff;
+  }
+
+  .mission-vision-values {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+
+    .item {
+      max-width: 300px;
+
+      h3 {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        color: #00f6ff;
+      }
+
+      p {
+        font-size: 1.15rem;
+        color: #b1dfe8;
+      }
+    }
+  }
+
+  .call-to-action {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00f6ff;
+
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        color: #00b8ff;
+      }
+    }
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .about-us {
+    padding: 4rem 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .mission-vision-values {
+      flex-direction: column;
+      gap: 2rem;
+
+      .item {
+        max-width: 100%;
+      }
+    }
+
+    .call-to-action {
+      font-size: 1.2rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}

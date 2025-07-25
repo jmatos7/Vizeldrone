@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="logo">VizelDrone</div>
+      <div className="logo"><img src="./src/img/LOGO.jpg" alt="drones" />VizelDrone</div>
 
       <button
         aria-label="Abrir menu"

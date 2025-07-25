@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import DRONES from './pages/Drones';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import PageTransition from './pages/PageTransition';
 import './main.scss';
 
@@ -45,6 +46,7 @@ export default function App() {
             />
           </Routes>
         </AnimatePresence>
+        <Footer />
       </div>
     </>
   );

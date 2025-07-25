@@ -27,7 +27,7 @@
         box-shadow: 0 8px 20px rgba(0, 246, 255, 0.3);
         cursor: pointer;
         overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, amimation 3s infinite ease-in-out;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, amimation 2s infinite ease-in-out;
 
         display: flex;
         flex-direction: column;
@@ -35,7 +35,7 @@
         &:not(.ativo):hover {
             transform: scale(1.03);
             box-shadow: 0 10px 25px rgba(0, 246, 255, 0.5);
-            animation: float 3s infinite ease-in-out ;
+            animation: float 2s infinite ease-in-out ;
         }
 
         @keyframes float {
@@ -46,7 +46,7 @@
       }
 
       50% {
-        transform: translateY(-8px);
+        transform: translateY(-16px);
       }
 
     }
