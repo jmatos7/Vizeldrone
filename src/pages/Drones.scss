@@ -13,6 +13,25 @@
   color: #00f6ff;    
   }
 
+  a {
+  color: #0000EE; /* azul clássico */
+  text-decoration: none; /* tira o underline padrão */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* transições suaves */
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  color: #0050aa; /* azul mais escuro no hover/focus */
+  text-decoration: underline; /* underline só aparece ao passar o rato */
+  outline: none; /* remove o foco padrão, podes personalizar */
+}
+
+a:active {
+  color: #003d80; /* azul ainda mais escuro ao clicar */
+}
+
+
   .drone-list {
     display: flex;
     flex-direction: column;
@@ -135,12 +154,15 @@
       }
 
       .drone-detalhes {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         border-radius: 0 0 12px 12px;
         padding: 1.5rem;
         font-size: 1.1rem;
-        align-items: center;
+        align-items: flex-start;
         text-align: center;
+        margin-left: auto;
       }
     }
 

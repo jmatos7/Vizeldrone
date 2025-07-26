@@ -1,4 +1,4 @@
-import { FaYoutube, FaInstagram, FaFacebook} from 'react-icons/fa';
+import { FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 import './Footer.scss';
 
 export default function Footer() {
@@ -16,21 +16,23 @@ export default function Footer() {
         <div className="links">
           <a href="/">Home</a>
           <a href="/drones">Drones</a>
-          <a href="/sobre">Sobre Nós</a>
+          <a href="/sobre">Sobre</a>
           <a href="/contactos">Contactos</a>
         </div>
-
+            
         <div className="socials">
           <h2>Siga-nos</h2>
-          <a href="https://www.youtube.com/@Vizeldrone" target="_blank" rel="noreferrer">
-            <FaYoutube />
-          </a>
-          <a href="https://www.instagram.com/vizeldrone/" target="_blank" rel="noreferrer">
-            <FaInstagram />
-          </a>
-          <a href="https://www.facebook.com/share/1B2vkddbsp" target="_blank" rel="noreferrer">
-            <FaFacebook />
-          </a>
+          <div className='social-links'>
+            <a href="https://www.youtube.com/@Vizeldrone" target="_blank" rel="noreferrer">
+              <FaYoutube />
+            </a>
+            <a href="https://www.instagram.com/vizeldrone/" target="_blank" rel="noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="https://www.facebook.com/share/1B2vkddbsp" target="_blank" rel="noreferrer">
+              <FaFacebook />
+            </a>
+          </div>
         </div>
       </div>
 
